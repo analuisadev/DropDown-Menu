@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DropDown Menu</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- <Nav> is for to create the menu-->
+    <nav class="nav">
+        <ul class="nav-links">
+            <li>
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li>
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">DropDown</a>
+                <div class="dropdown_menu">
+                    <a href="#" class="dropdown-item">Item</a>
+                    <a href="#" class="dropdown-item">Item</a>
+                    <a href="#" class="dropdown-item">Item</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        document.querySelectorAll('.dropdown')
+        .forEach(el => el.addEventListener('click', handleClick))
+
+        function handleClick(e) {
+
+        e.preventDefault()
+        const classList = e.currentTarget.classList
+
+        const isOpen = classList.contains('dropdown--open')
+        if (isOpen) {
+            classList.remove('dropdown--open')
+        } else {
+            classList.add('dropdown--open')
+        }
+}
+    </script>
+</body>
+</html>
